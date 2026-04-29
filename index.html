@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Priyanka Bhandari | SEO & Digital Marketing Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --bg2: #eeeae2;
+      --text: #1a1814;
+      --muted: #6b6660;
+      --accent: #2d5a3d;
+      --accent2: #c8a96e;
+      --white: #ffffff;
+      --border: #d8d2c8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 400; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(247,244,239,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 6rem 3rem 4rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; width: 500px; height: 500px;
+      border-radius: 50%; background: radial-gradient(circle, #c8a96e22, transparent 70%);
+      top: 10%; left: 50%; transform: translateX(-50%); pointer-events: none;
+    }
+    .hero-inner { max-width: 700px; animation: fadeUp 0.8s ease both; }
+    .hero-tag {
+      display: inline-block; border: 1px solid var(--accent2); color: var(--accent2);
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 100px; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif; font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.1; color: var(--text); margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent); color: #fff; padding: 12px 28px;
+      border-radius: 100px; font-size: 14px; text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); background: #1e3f2a; }
+    .btn-outline {
+      border: 1px solid var(--border); color: var(--text); padding: 12px 28px;
+      border-radius: 100px; font-size: 14px; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: var(--bg2); }
+
+    /* SECTIONS */
+    section { padding: 5rem 3rem; max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 0.75rem; font-weight: 500;
+    }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--text); margin-bottom: 2.5rem; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-text p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat-box { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--accent); }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* SKILLS */
+    .skills-section { background: var(--bg2); border-radius: 24px; padding: 3rem; margin: 0 2rem; }
+    .skills-inner { max-width: 1000px; margin: 0 auto; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 2rem; }
+    .skill-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .skill-icon { font-size: 28px; margin-bottom: 12px; }
+    .skill-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .skill-tools { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .skill-bar { height: 3px; background: var(--bg2); border-radius: 100px; margin-top: 12px; }
+    .skill-fill { height: 100%; background: var(--accent); border-radius: 100px; }
+
+    /* EXPERIENCE */
+    .exp-timeline { position: relative; padding-left: 2rem; }
+    .exp-timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 0; width: 1px; background: var(--border); }
+    .exp-item { position: relative; margin-bottom: 2.5rem; }
+    .exp-dot { position: absolute; left: -2.4rem; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+    .exp-meta { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+    .exp-role { font-size: 16px; font-weight: 500; color: var(--text); }
+    .exp-company { font-size: 13px; color: var(--accent); background: #2d5a3d18; padding: 3px 10px; border-radius: 100px; }
+    .exp-date { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .exp-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .project-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.5rem; transition: transform 0.2s;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .project-card:hover { transform: translateY(-4px); }
+    .project-niche { font-size: 11px; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .project-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .project-url { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+    .project-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--accent); text-decoration: none;
+      border: 1px solid var(--accent); border-radius: 100px; padding: 6px 14px;
+      transition: background 0.2s; margin-top: auto;
+    }
+    .project-link:hover { background: #2d5a3d18; }
+
+    /* CONTACT */
+    .contact-box {
+      background: var(--accent); border-radius: 24px; padding: 3.5rem;
+      text-align: center; color: #fff;
+    }
+    .contact-box h2 { font-family: 'DM Serif Display', serif; font-size: 36px; margin-bottom: 1rem; }
+    .contact-box p { font-size: 15px; opacity: 0.8; margin-bottom: 2rem; line-height: 1.7; }
+    .contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px; color: #fff; text-decoration: none; font-size: 14px;
+      transition: background 0.2s;
+    }
+    .contact-link:hover { background: rgba(255,255,255,0.25); }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding: 5rem 1.5rem 3rem; }
+      section { padding: 3rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .skills-section { margin: 0 1rem; padding: 2rem 1.5rem; }
+      .contact-box { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Priyanka Bhandari</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">SEO & Digital Marketing Specialist</div>
+      <h1>Helping brands<br/>grow <em>organically</em></h1>
+      <p>2.9+ years of experience in SEO, PPC & Social Media. I turn data into rankings, clicks into customers, and visibility into growth.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">About Me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">SEO Expert &<br/>Digital Strategist</h2>
+        <p>I'm Priyanka Bhandari, a Digital Marketing Specialist with 2.9+ years of experience in On-Page, Off-Page, and Technical SEO.</p>
+        <p>I help businesses improve their organic rankings, drive qualified traffic, and generate real leads through data-driven strategies using tools like Google Search Console, SEMrush, and Ahrefs.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-num">2.9+</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Live Projects</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Companies Worked</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Data-Driven Approach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <div class="skills-section">
+    <div class="skills-inner">
+      <div class="section-label">What I Do</div>
+      <h2 class="section-title" style="margin-bottom:0;">Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🔍</div>
+          <div class="skill-name">SEO</div>
+          <div class="skill-tools">On-Page · Off-Page · Technical SEO · Keyword Research · Content Optimization · Website Audits</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📢</div>
+          <div class="skill-name">PPC Advertising</div>
+          <div class="skill-tools">Google Ads · Meta Ads · Campaign Management · ROI Optimization · Ad Copywriting</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📱</div>
+          <div class="skill-name">Social Media</div>
+          <div class="skill-tools">Content Strategy · Instagram · LinkedIn · Facebook · Community Management · Paid Promotions</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📊</div>
+          <div class="skill-name">SEO Tools</div>
+          <div class="skill-tools">Google Search Console · SEMrush · Ahrefs · Google Analytics · Screaming Frog</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">Work History</div>
+    <h2 class="section-title">Experience</h2>
+    <div class="exp-timeline">
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-role">Digital Marketing Executive</span>
+          <span class="exp-company">Digitech Healthcare</span>
+        </div>
+        <div class="exp-date">Current Role</div>
+        <div class="exp-desc">Leading SEO and digital marketing strategies for healthcare clients. Handling on-page, off-page, and technical SEO to improve organic visibility and generate qualified leads.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-role">Digital Marketing Executive</span>
+          <span class="exp-company">Digidotes</span>
+        </div>
+        <div class="exp-date">Previous Role</div>
+        <div class="exp-desc">Managed SEO campaigns, keyword research, and content optimization for multiple clients. Drove measurable improvements in organic rankings and website traffic.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-role">Digital Marketing Intern</span>
+          <span class="exp-company">Weblabz</span>
+        </div>
+        <div class="exp-date">6 Months · Internship</div>
+        <div class="exp-desc">Started my digital marketing journey here. Learned on-page SEO, social media management, and content strategy fundamentals.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Live Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div>
+          <div class="project-niche">Books & Publishing</div>
+          <div class="project-name">Radian Books</div>
+          <div class="project-url">radianbooks.in</div>
+        </div>
+        <a href="https://radianbooks.in/" target="_blank" class="project-link">View Live ↗</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="project-niche">Healthcare · Clinic</div>
+          <div class="project-name">Rolis Clinic</div>
+          <div class="project-url">rolisclinic.com</div>
+        </div>
+        <a href="https://rolisclinic.com/" target="_blank" class="project-link">View Live ↗</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="project-niche">Mental Wellness</div>
+          <div class="project-name">Advait Mindwin</div>
+          <div class="project-url">advaitmindwin.com</div>
+        </div>
+        <a href="https://advaitmindwin.com/" target="_blank" class="project-link">View Live ↗</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="project-niche">Healthcare · Doctor</div>
+          <div class="project-name">Dr. Ankur Arya</div>
+          <div class="project-url">drankurarya.com</div>
+        </div>
+        <a href="https://drankurarya.com/" target="_blank" class="project-link">View Live ↗</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="project-niche">Healthcare · Doctor</div>
+          <div class="project-name">Dr. Ankit Tyagi</div>
+          <div class="project-url">drankittyagi.com</div>
+        </div>
+        <a href="https://drankittyagi.com/" target="_blank" class="project-link">View Live ↗</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="project-niche">Healthcare · Urology</div>
+          <div class="project-name">Dr. Rohit Kumar</div>
+          <div class="project-url">drrohitkumarurologist.com</div>
+        </div>
+        <a href="https://drrohitkumarurologist.com/" target="_blank" class="project-link">View Live ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-bottom: 2rem;">
+    <div class="contact-box">
+      <h2>Let's work together</h2>
+      <p>Looking for an SEO specialist or digital marketer?<br/>I'd love to help your brand grow online.</p>
+      <div class="contact-links">
+        <a href="mailto:priyanka.bhandaridm@gmail.com" class="contact-link">✉ priyanka.bhandaridm@gmail.com</a>
+        <a href="https://www.linkedin.com/in/priyanka-bhandari-ab8677275/" target="_blank" class="contact-link">💼 LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Priyanka Bhandari · Digital Marketing Specialist</p>
+  </footer>
+
+</body>
+</html>
