@@ -175,6 +175,27 @@
     }
     .scroll-top:hover { transform: translateY(-3px); }
 
+    /* SOCIAL MEDIA SECTION */
+    .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+    .social-card {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 20px;
+      padding: 1.5rem; display: flex; flex-direction: column; gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+    .social-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(225,48,108,0.13); border-color: #e1306c; }
+    .social-card-top { display: flex; align-items: center; gap: 12px; }
+    .social-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .social-name { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.3; }
+    .social-niche { font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-top: 2px; }
+    .social-handle { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .social-follow { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #e1306c; font-weight: 600; margin-top: 6px; }
+
     footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); background: var(--bg2); }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -199,6 +220,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#social">Social Media</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -207,7 +229,7 @@
     <div class="hero-inner">
       <div class="hero-tag">SEO & Digital Marketing Specialist</div>
       <h1>Helping brands<br/>grow <em>organically</em></h1>
-      <p>2.9+ years of experience in SEO, PPC & Social Media. I turn data into rankings, clicks into customers, and visibility into growth.</p>
+      <p>2.9+ years of experience in SEO, Google Ads & Social Media Management. I rank websites on Google, run high-converting ad campaigns, and manage Instagram for 13+ healthcare brands.</p>
       <div class="hero-btns">
         <a href="#projects" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-outline">Get In Touch</a>
@@ -219,15 +241,15 @@
     <div class="section-label">About Me</div>
     <div class="about-grid">
       <div class="about-text">
-        <h2 class="section-title">SEO Expert &<br/>Digital Strategist</h2>
-        <p>I'm Priyanka Bhandari, a Digital Marketing Specialist with 2.9+ years of experience in On-Page, Off-Page, and Technical SEO.</p>
-        <p>I help businesses improve their organic rankings, drive qualified traffic, and generate real leads through data-driven strategies using tools like Google Search Console, SEMrush, and Ahrefs.</p>
+        <h2 class="section-title">SEO, Google Ads &<br/>Social Media Expert</h2>
+        <p>I'm Priyanka Bhandari, a Digital Marketing Specialist with 2.9+ years of experience in SEO, Google Ads, and Social Media Management.</p>
+        <p>I help healthcare brands and businesses grow online through data-driven SEO strategies, high-performing Google Ads campaigns, and engaging social media content. From ranking websites on Google to managing Instagram accounts for 13+ medical professionals and clinics — I deliver real results across all digital channels.</p>
       </div>
       <div class="stats-grid">
         <div class="stat-box"><div class="stat-num">2.9+</div><div class="stat-label">Years of Experience</div></div>
         <div class="stat-box"><div class="stat-num">10+</div><div class="stat-label">Live Projects</div></div>
+        <div class="stat-box"><div class="stat-num">13+</div><div class="stat-label">Social Media Clients</div></div>
         <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Companies Worked</div></div>
-        <div class="stat-box"><div class="stat-num">100%</div><div class="stat-label">Data-Driven Approach</div></div>
       </div>
     </div>
   </section>
@@ -437,6 +459,170 @@
         <div class="project-divider"></div>
         <a href="https://www.byetense.com/" target="_blank" class="project-link">View Live ↗</a>
       </div>
+    </div>
+  </section>
+
+  <section id="social">
+    <div class="section-label">Instagram Management</div>
+    <h2 class="section-title">Social Media Clients</h2>
+    <div class="social-grid">
+
+      <a href="https://www.instagram.com/drila.gupta_gynecologist/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">👩‍⚕️</div>
+          <div>
+            <div class="social-name">Dr. Ila Gupta</div>
+            <div class="social-niche">Gynaecologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drila.gupta_gynecologist</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/drshivambikajoshi/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">👩‍⚕️</div>
+          <div>
+            <div class="social-name">Dr. Shivambika Joshi</div>
+            <div class="social-niche">Gynaecologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drshivambikajoshi</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/drrolibanthia/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">👩‍⚕️</div>
+          <div>
+            <div class="social-name">Dr. Roli Banthia</div>
+            <div class="social-niche">Gynaecologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drrolibanthia</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/drankuraryaurologist/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">👨‍⚕️</div>
+          <div>
+            <div class="social-name">Dr. Ankur Arya</div>
+            <div class="social-niche">Urologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drankuraryaurologist</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/drankittyagiurologist/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">🩺</div>
+          <div>
+            <div class="social-name">Dr. Ankit Tyagi</div>
+            <div class="social-niche">Urologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drankittyagiurologist</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/drrohitkumarurologist/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">🔬</div>
+          <div>
+            <div class="social-name">Dr. Rohit Kumar</div>
+            <div class="social-niche">Urologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drrohitkumarurologist</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/drprabhatranjan_oncologist/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">🎗️</div>
+          <div>
+            <div class="social-name">Dr. Prabhat Ranjan</div>
+            <div class="social-niche">Oncologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drprabhatranjan_oncologist</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/radianbooks/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">📚</div>
+          <div>
+            <div class="social-name">Radian Books</div>
+            <div class="social-niche">Books & Publishing</div>
+          </div>
+        </div>
+        <div class="social-handle">@radianbooks</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/advait_mindwin_clinic/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">🧠</div>
+          <div>
+            <div class="social-name">Advait Mindwin</div>
+            <div class="social-niche">Mental Wellness</div>
+          </div>
+        </div>
+        <div class="social-handle">@advait_mindwin_clinic</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/drnishtha_fertilityscope/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">🌸</div>
+          <div>
+            <div class="social-name">Dr. Nishtha Handa</div>
+            <div class="social-niche">IVF Specialist</div>
+          </div>
+        </div>
+        <div class="social-handle">@drnishtha_fertilityscope</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/singhnursinghome/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">🏥</div>
+          <div>
+            <div class="social-name">Singh Nursing Home</div>
+            <div class="social-niche">Gynaecologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@singhnursinghome</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/genuinedermat/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">✨</div>
+          <div>
+            <div class="social-name">Genuine Dermat</div>
+            <div class="social-niche">Dermatologist</div>
+          </div>
+        </div>
+        <div class="social-handle">@genuinedermat</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
+      <a href="https://www.instagram.com/delhiglobalhospital/" target="_blank" class="social-card">
+        <div class="social-card-top">
+          <div class="social-avatar">🏨</div>
+          <div>
+            <div class="social-name">Delhi Global Hospital</div>
+            <div class="social-niche">Hospital</div>
+          </div>
+        </div>
+        <div class="social-handle">@delhiglobalhospital</div>
+        <div class="social-follow">📷 View on Instagram ↗</div>
+      </a>
+
     </div>
   </section>
 
